@@ -235,4 +235,8 @@ header {
     .card-image {
       width: 100%;
     }
+
+    .modal {
+      overflow: auto;
+    }
   }
