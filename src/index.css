@@ -1,13 +1,238 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue";
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #ebebeb;
+  min-height: 100vh;
 }
+
+/* Header Style */
+
+header {
+  background-color: #fff;
+  width: 100%;
+}
+
+.main-header {
+  text-align: center;
+  font-weight: 400;
+  padding: 27.5px 0px;
+}
+
+  /* Card Style */
+
+  .card-image {
+    height: 276px;
+    width: 458px;
+  }
+
+  .review {
+    width: 458px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .reviews-container h1 {
+    font-size: 22px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .card-heading {
+    background-color: #212121;
+    color: #fff;
+    padding: 18.5px 0px;;
+  }
+
+  .card-review {
+    background-color: #fff;
+    color: #212121;
+    padding: 16px;
+    transition: 0.5s;
+  }
+
+  .card-review:hover{
+    background-color: #212121;
+    color: #fff;
+  }
+
+
+
+  .reviews-container {
+    width: 100%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 456px 456px 456px;
+    grid-gap: 100px;
+    justify-content: center;
+  }
+
+  /* Modal Styles */
+
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(33, 33, 33, 0.85);
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .modal {
+    width: 960px;
+    height: 100%;
+    overflow:auto; 
+    background-color: #212121;
+    color: #fff;
+    position: absolute;
+    right: -960px;
+    animation-name: slide;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes slide {
+    from{ transform: translateX(0)}
+    to{ transform: translateX(-960px) }
+  }
+
+  .closeBtn {
+    align-self: flex-end;
+    margin-top: 39.75px;
+    transition: 0.5s;
+  }
+
+  .closeBtn:hover {
+    cursor: pointer;
+    transform: rotate(180deg);
+  }
+
+  .modal-img {
+    width: 883px;
+    height: 532px;
+    margin-top: 39.75px;
+  }
+
+  .modal-wraper {
+    margin: 0px 39px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal h1,
+  .modal h2 {
+    font-weight: 200;
+    border-top: 1px #707070 solid;
+    padding: 14px 0px;
+  }
+
+  .modal h1 {
+    font-size: 28px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-top: 14px;
+  }
+
+  .modal h2 {
+    font-size: 22px;
+  }
+
+  .modal p {
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    font-weight: 200;
+    max-width: 497px;
+    margin-bottom: 20px;
+  }
+
+  /* Media Queries */
+
+  @media only screen and (max-width: 1600px) {
+    .reviews-container {
+      grid-template-columns: 456px 456px;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .reviews-container {
+      grid-template-columns: 456px;
+    }
+    
+    .background {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .modal {
+      width: 90%;
+      height: 95%;
+      overflow: unset;
+      background-color: #212121;
+      color: #fff;
+      position: absolute;
+      right: unset;
+      animation-name: unset;
+      display: flex;
+      justify-content: center;
+      margin: 10px auto;
+    }
+
+    .modal-wraper {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-img {
+      width: 100%;
+      height: 40%;
+      margin-top: 20px;
+    }
+
+  .modal h1,
+  .modal h2 {
+    padding: 7px 0px;
+  }
+
+  .modal h1 {
+    font-size: 16px;
+    margin-top: 7px;
+  }
+
+  .modal h2 {
+    font-size: 14px;
+  }
+
+  .modal p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  }
+
+  @media only screen and (max-width: 420px) {
+    .reviews-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .review {
+      padding: 10px;
+      width: 95%;
+    }
+
+    .card-image {
+      width: 100%;
+    }
+  }
