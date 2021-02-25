@@ -240,3 +240,21 @@ header {
       overflow: auto;
     }
   }
+
+  /* IE 11 Styles */
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    * {
+      font-family: Helvetica, sans-serif;
+    }
+
+    .reviews-container {
+      display:flex;
+      flex-wrap: wrap;
+    }
+
+    .review {
+      margin-right: 100px;
+      margin-bottom: 100px;
+    }
+  }
