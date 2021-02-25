@@ -252,11 +252,10 @@ header {
       display:flex;
       flex-wrap: wrap;
       width: 90%;
-      margin: 0 auto;
+      margin: 20px auto;
     }
 
     .review {
-      margin-right: 100px;
-      margin-bottom: 100px;
+      margin: 100px;
     }
   }
